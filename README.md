@@ -1,18 +1,111 @@
-# Snake–Water–Gun Game (C Programming)
-A fun and lightweight terminal-based Snake–Water–Gun game written in C, where you play against the
-computer.
-## Overview
-Snake–Water–Gun is similar to Rock–Paper–Scissors but with different rules:
-- Snake drinks Water ® Snake wins
-- Water ruins Gun ® Water wins
-- Gun shoots Snake ® Gun wins
-- Same choice ® Draw
-## Unique Features
-- Modular code structure
-- Beginner-friendly
-- Randomized computer choices
-- Easy to expand (scoreboard, emojis, sound effects)
-## How to Run
-1. Save as snake_water_gun.c
-2. Compile: gcc snake_water_gun.c -o swg
-3. Run: ./swg
+🐍💧🔫 Snake–Water–Gun Game (C Language)
+
+A lightweight yet engaging CLI-based Snake–Water–Gun game, fully written in pure C.
+This mini-project demonstrates random number generation, decision-making logic, modular functions, and clean coding practices—perfect for beginners and students.
+
+⭐ Key Highlights
+
+🎮 Interactive Gameplay – user vs computer
+
+🔀 True randomness with rand() + time()
+
+🧠 Modular function design (checkWinner() keeps logic clean)
+
+🧩 Beginner-friendly & easy to understand
+
+⚡ Fast execution and minimal code
+
+🔧 Highly customizable for future upgrades
+
+✨ Unique Touch:
+
+Includes extendable architecture for adding rounds, scoreboard, emoji mode, sound effects, and AI difficulty modes.
+
+📘 Game Rules
+Player Option	Computer Option	Result
+Snake (s)	Water (w)	Player Wins
+Water (w)	Gun (g)	Player Wins
+Gun (g)	Snake (s)	Player Wins
+Same Choice	Same Choice	Draw
+📂 Project Structure
+📦 Snake-Water-Gun
+ ┣ 📄 snake_water_gun.c
+ ┗ 📄 README.md
+
+🧑‍💻 How to Run
+1️⃣ Compile the Program
+gcc snake_water_gun.c -o swg
+
+2️⃣ Run the Game
+./swg
+
+🖥️ Sample Gameplay
+------ Snake Water Gun Game ------
+Enter your choice (s for Snake, w for Water, g for Gun): g
+Computer chose: s
+You WIN!
+
+🧾 Source Code
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+// Function to determine winner
+int checkWinner(char player, char computer) {
+    if (player == computer)
+        return 0; // draw
+    
+    if ((player == 's' && computer == 'w') ||
+        (player == 'w' && computer == 'g') ||
+        (player == 'g' && computer == 's'))
+        return 1; // player wins
+    
+    return -1; // computer wins
+}
+
+int main() {
+    char player, computer;
+    int result;
+
+    srand(time(0)); // random seed
+    
+    printf("------ Snake Water Gun Game ------\n");
+    printf("Enter your choice (s for Snake, w for Water, g for Gun): ");
+    scanf(" %c", &player);
+
+    // Generate random choice for computer
+    int randomNum = rand() % 3;
+    if (randomNum == 0)
+        computer = 's';
+    else if (randomNum == 1)
+        computer = 'w';
+    else
+        computer = 'g';
+
+    printf("Computer chose: %c\n", computer);
+
+    result = checkWinner(player, computer);
+
+    if (result == 0)
+        printf("It's a DRAW!\n");
+    else if (result == 1)
+        printf("You WIN!\n");
+    else
+        printf("You LOSE!\n");
+
+    return 0;
+}
+
+🚀 Possible Future Upgrades
+
+🎭 Emoji Mode (🐍💧🔫)
+
+🔊 Sound Effects on win/lose
+
+📊 Scoreboard & multi-round gameplay
+
+🎮 Beginner / Hard difficulty modes
+
+🖥️ GUI version using SDL/GTK
+
+🌐 Online multiplayer mode (if extended beyond C)
