@@ -110,6 +110,6 @@ int main() {
 
 🌐 Online multiplayer mode (if extended beyond C)
  OUTPUT SCREENSHORT
- ![image alt]()
+ ![image alt](https://github.com/TusharMahakul-20336/SNAKE_WATER_GUN/blob/1f20a922b53185cbab0ff34c0024ec6fffc7eb39/Screenshot%202025-11-26%20095817.png)
  ![image alt](image__url)
  ![image alt](image__url)
