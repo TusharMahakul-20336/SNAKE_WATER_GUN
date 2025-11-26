@@ -109,3 +109,7 @@ int main() {
 🖥️ GUI version using SDL/GTK
 
 🌐 Online multiplayer mode (if extended beyond C)
+ OUTPUT SCREENSHORT
+ ![image alt]()
+ ![image alt](image__url)
+ ![image alt](image__url)
